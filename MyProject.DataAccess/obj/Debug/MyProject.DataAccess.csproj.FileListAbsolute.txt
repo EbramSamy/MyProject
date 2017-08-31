@@ -1,0 +1,10 @@
+I:\Git\MyProjectGit\MyProject.DataAccess\bin\Debug\MyProject.DataAccess.dll.config
+I:\Git\MyProjectGit\MyProject.DataAccess\bin\Debug\MyProject.DataAccess.dll
+I:\Git\MyProjectGit\MyProject.DataAccess\bin\Debug\MyProject.DataAccess.pdb
+I:\Git\MyProjectGit\MyProject.DataAccess\bin\Debug\EntityFramework.dll
+I:\Git\MyProjectGit\MyProject.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+I:\Git\MyProjectGit\MyProject.DataAccess\bin\Debug\EntityFramework.xml
+I:\Git\MyProjectGit\MyProject.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+I:\Git\MyProjectGit\MyProject.DataAccess\obj\Debug\MyProject.DataAccess.csproj.CoreCompileInputs.cache
+I:\Git\MyProjectGit\MyProject.DataAccess\obj\Debug\MyProject.DataAccess.dll
+I:\Git\MyProjectGit\MyProject.DataAccess\obj\Debug\MyProject.DataAccess.pdb
