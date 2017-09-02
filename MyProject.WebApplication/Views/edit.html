@@ -1,3 +1,37 @@
-﻿<div class="row jumbotron">
-    <h2>{{message}}</h2>
+﻿<h1 class="text-center text-danger">Edit Student</h1>
+<br />
+<div class="row">
+    <div class="col-md-3 col-lg-offset-1">
+       <h3 class="text-danger"> Select Student </h3>
+        <hr/>
+
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="studentsDropDown" data-toggle="dropdown">
+                {{selectedItem}}
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="studentsDropDown">
+                <li ng-repeat="student in students">
+                    <a ng-click="itemSelected(student)">{{student.S_Id}}</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <div class="col-md-7">
+        <div class="col-md-6 col-lg-offset-3">
+            <form ng-show="isDeleteVisible">
+                <div class="form-group">
+                    <label for="nameInput">Name</label>
+                    <input id="nameInput" type="text" ng-model="S_Name" class="form-control input-lg" placeholder="Student Name" />
+                </div>
+                <button ng-click="updateStudent()" class="btn btn-info form-control input-lg">Update</button>
+            </form>
+
+        </div>
+    </div>
+
+
 </div>

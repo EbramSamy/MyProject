@@ -1,12 +1,27 @@
-﻿<div class="row jumbotron">
-    <table class="table table-bordered table-striped">
-        <tr>
-            <td>Student ID</td>
-            <td>Student Name</td>
-        </tr>
-        <tr ng-repeat="student in students">
-            <td>{{student.S_Id }}</td>
-            <td>{{student.S_Name }}</td>
-        </tr>
-    </table>
+﻿<div class="row ">
+
+    <h1 class="text-center text-danger">Students</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-9 col-lg-offset-1">
+            <input type="text" placeholder="Type To Filter Here" class="input-lg form-control" ng-model="searchFilter" />
+            <br />
+            <br />
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Student Name</th>
+                    </tr>
+                </thead>
+                <tr ng-repeat="student in students|filter:searchFilter">
+                    <td>{{student.S_Id }}</td>
+                    <td>{{student.S_Name }}</td>
+                </tr>
+            </table>
+
+
+        </div>
+
+    </div>
 </div>
