@@ -1,24 +1,37 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="MyApp">
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
     <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
     <script src="Scripts/script.js"></script>
+    <script src="service.js"></script>
+
+
     <link href="Content/bootstrap.css" rel="stylesheet" />
+
 </head>
-<body ng-app="myApp" class="container">
-    <div ng-controller="MainController">
-        <table class="table table-bordered table-striped" >
-            <tr>
-                <td>Student ID</td>
-                <td>Student Name</td>
-            </tr>
-            <tr ng-repeat="student in students">
-                <td>{{student.S_Id }}</td>
-                <td>{{student.S_Name }}</td>
-            </tr>
-        </table>
+<body class="container">
+    <nav role="navigation" class="navbar navbar-inverse">
+        <ul class="nav navbar-nav">
+            <li class="active"> <a href="#!/Home"> Home </a></li>
+            <li> <a href="#!/Add"> Add </a></li>
+            <li> <a href="#!/Edit"> Edit </a></li>
+            <li> <a href="#!/Delete"> Delete </a></li>
+        </ul>
+
+    </nav>
+
+
+    <div ng-view>
+
     </div>
+
+    <h3>MyDemo</h3>
+
+
 </body>
 </html>

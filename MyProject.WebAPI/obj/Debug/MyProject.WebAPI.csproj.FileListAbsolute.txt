@@ -124,7 +124,9 @@ I:\Git\MyProjectGit\MyProject.WebAPI\bin\Microsoft.Web.Infrastructure.dll
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\MyProject.DataAccess.dll
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\Newtonsoft.Json.dll
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\System.Net.Http.Formatting.dll
+I:\Git\MyProjectGit\MyProject.WebAPI\bin\System.Web.Cors.dll
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\System.Web.Helpers.dll
+I:\Git\MyProjectGit\MyProject.WebAPI\bin\System.Web.Http.Cors.dll
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\System.Web.Http.dll
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\System.Web.Http.WebHost.dll
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\System.Web.Mvc.dll
@@ -139,6 +141,7 @@ I:\Git\MyProjectGit\MyProject.WebAPI\bin\MyProject.DataAccess.dll.config
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\EntityFramework.xml
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\EntityFramework.SqlServer.xml
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+I:\Git\MyProjectGit\MyProject.WebAPI\bin\System.Web.Http.Cors.xml
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\Newtonsoft.Json.xml
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\System.Net.Http.Formatting.xml
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\System.Web.Helpers.xml
@@ -160,6 +163,3 @@ I:\Git\MyProjectGit\MyProject.WebAPI\obj\Debug\MyProject.WebAPI.csprojResolveAss
 I:\Git\MyProjectGit\MyProject.WebAPI\obj\Debug\MyProject.WebAPI.csproj.CoreCompileInputs.cache
 I:\Git\MyProjectGit\MyProject.WebAPI\obj\Debug\MyProject.WebAPI.dll
 I:\Git\MyProjectGit\MyProject.WebAPI\obj\Debug\MyProject.WebAPI.pdb
-I:\Git\MyProjectGit\MyProject.WebAPI\bin\System.Web.Cors.dll
-I:\Git\MyProjectGit\MyProject.WebAPI\bin\System.Web.Http.Cors.dll
-I:\Git\MyProjectGit\MyProject.WebAPI\bin\System.Web.Http.Cors.xml
