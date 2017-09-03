@@ -2,6 +2,37 @@
 var MyApp = angular.module("MyApp", ['ngRoute', 'StudentService']);
 
 
+
+MyApp.config(['$httpProvider', function ($httpProvider) {
+    var interceptor = function (TokeService, $q, $location) {
+
+        return {
+            request: function (config) {
+                var currentToken = TokeService.CurrentToken;
+                if (currentToken != null) {
+                    config.headers['Authorization'] = 'Bearer ' + currentToken.access_token;
+                }
+                return config;
+            },
+            responseError: function (rejection) {
+                if (rejection.status === 401) {
+
+                    return $q.reject(rejection);
+                }
+                if (rejection.status === 403) {
+
+                    return $q.reject(rejection);
+                }
+                return $q.reject(rejection);
+            }
+
+        }
+    }
+    var params = ['TokeService', '$q', '$location'];
+    interceptor.$inject = params;
+    $httpProvider.interceptors.push(interceptor);
+}]);
+
 MyApp.config(['$routeProvider', function ($routeProvider) {
 
 
@@ -22,8 +53,12 @@ MyApp.config(['$routeProvider', function ($routeProvider) {
             templateUrl: 'Views/home.html',
             controller: 'HomeController'
         }).
+        when('/GenerateToken', {
+            templateUrl: 'Views/generateToken.html',
+            controller: 'GenerateTokenController'
+        }).
         otherwise({
-            redirectTo: '/Home'
+            redirectTo: '/GenerateToken'
         });
 
 }]);
@@ -49,7 +84,7 @@ MyApp.controller("AddController", function ($scope, StudentAPI) {
         addStudent(studentToAdd).then(onSuccess, onFail);
 
     };
-   
+
 });
 
 MyApp.controller("EditController", function ($scope, StudentAPI) {
@@ -158,9 +193,24 @@ MyApp.controller("DeleteController", function ($scope, StudentAPI) {
     };
 });
 
-MyApp.controller("HomeController", function ($scope, StudentAPI) {
 
-        var onSuccess = function (response) {
+MyApp.controller("GenerateTokenController", function ($scope, StudentAPI_Token) {
+    var getToken = StudentAPI_Token.getToken;
+    var onSuccess = function (response) {
+        $scope.token = StudentAPI_Token.token;
+    };
+
+    var onFail = function (reason) {
+        $scope.error = reason;
+    };
+
+    getToken().then(onSuccess, onFail);
+    
+});
+
+MyApp.controller("HomeController", function ($scope, StudentAPI) {
+    
+    var onSuccess = function (response) {
         $scope.students = response.data;
     };
 

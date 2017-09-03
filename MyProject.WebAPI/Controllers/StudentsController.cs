@@ -17,12 +17,14 @@ namespace MyProject.WebAPI.Controllers
         private MyProjectDbEntities db = new MyProjectDbEntities();
 
         // GET: api/Students
+        [Authorize]
         public IQueryable<Student> GetStudents()
         {
             return db.Students;
         }
 
         // GET: api/Students/5
+        [Authorize]
         [ResponseType(typeof(Student))]
         public IHttpActionResult GetStudent(int id)
         {
@@ -36,6 +38,7 @@ namespace MyProject.WebAPI.Controllers
         }
 
         // PUT: api/Students/5
+        [AllowAnonymous]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutStudent(int id, Student student)
         {
@@ -71,6 +74,7 @@ namespace MyProject.WebAPI.Controllers
         }
 
         // POST: api/Students
+        [AllowAnonymous]
         [ResponseType(typeof(Student))]
         public IHttpActionResult PostStudent(Student student)
         {
@@ -86,6 +90,7 @@ namespace MyProject.WebAPI.Controllers
         }
 
         // DELETE: api/Students/5
+        [AllowAnonymous]
         [ResponseType(typeof(Student))]
         public IHttpActionResult DeleteStudent(int id)
         {

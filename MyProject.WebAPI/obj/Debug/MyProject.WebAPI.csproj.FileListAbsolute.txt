@@ -120,9 +120,15 @@ I:\Git\MyProjectGit\MyProject.WebAPI\bin\Microsoft.AI.Web.dll
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\Microsoft.AI.WindowsServer.dll
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\Microsoft.ApplicationInsights.dll
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+I:\Git\MyProjectGit\MyProject.WebAPI\bin\Microsoft.Owin.Cors.dll
+I:\Git\MyProjectGit\MyProject.WebAPI\bin\Microsoft.Owin.dll
+I:\Git\MyProjectGit\MyProject.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.dll
+I:\Git\MyProjectGit\MyProject.WebAPI\bin\Microsoft.Owin.Security.dll
+I:\Git\MyProjectGit\MyProject.WebAPI\bin\Microsoft.Owin.Security.OAuth.dll
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\Microsoft.Web.Infrastructure.dll
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\MyProject.DataAccess.dll
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\Newtonsoft.Json.dll
+I:\Git\MyProjectGit\MyProject.WebAPI\bin\Owin.dll
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\System.Net.Http.Formatting.dll
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\System.Web.Cors.dll
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\System.Web.Helpers.dll
@@ -141,6 +147,11 @@ I:\Git\MyProjectGit\MyProject.WebAPI\bin\MyProject.DataAccess.dll.config
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\EntityFramework.xml
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\EntityFramework.SqlServer.xml
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+I:\Git\MyProjectGit\MyProject.WebAPI\bin\Microsoft.Owin.xml
+I:\Git\MyProjectGit\MyProject.WebAPI\bin\Microsoft.Owin.Cors.xml
+I:\Git\MyProjectGit\MyProject.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.xml
+I:\Git\MyProjectGit\MyProject.WebAPI\bin\Microsoft.Owin.Security.xml
+I:\Git\MyProjectGit\MyProject.WebAPI\bin\Microsoft.Owin.Security.OAuth.xml
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\System.Web.Http.Cors.xml
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\Newtonsoft.Json.xml
 I:\Git\MyProjectGit\MyProject.WebAPI\bin\System.Net.Http.Formatting.xml
