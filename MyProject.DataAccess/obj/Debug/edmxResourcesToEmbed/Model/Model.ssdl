@@ -6,6 +6,8 @@
     </Key>
     <Property Name="S_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="S_Name" Type="nchar" MaxLength="50" />
+    <Property Name="S_Address" Type="nchar" MaxLength="50" />
+    <Property Name="S_PhoneNo" Type="nchar" MaxLength="50" />
   </EntityType>
   <EntityContainer Name="MyProjectDbModelStoreContainer">
     <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />

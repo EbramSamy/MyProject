@@ -4,6 +4,8 @@
     <EntitySetMapping Name="Students">
       <EntityTypeMapping TypeName="MyProjectDbModel.Student">
         <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="S_PhoneNo" ColumnName="S_PhoneNo" />
+          <ScalarProperty Name="S_Address" ColumnName="S_Address" />
           <ScalarProperty Name="S_Id" ColumnName="S_Id" />
           <ScalarProperty Name="S_Name" ColumnName="S_Name" />
         </MappingFragment>

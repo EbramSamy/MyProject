@@ -12,11 +12,15 @@
                     <tr>
                         <th>Student ID</th>
                         <th>Student Name</th>
+                        <th>Student Address</th>
+                        <th>Student PhoneNo</th>
                     </tr>
                 </thead>
                 <tr ng-repeat="student in students|filter:searchFilter">
                     <td>{{student.S_Id }}</td>
                     <td>{{student.S_Name }}</td>
+                    <td>{{student.S_PhoneNo }}</td>
+                    <td>{{student.S_Address }}</td>
                 </tr>
             </table>
         </div>

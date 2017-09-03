@@ -87,13 +87,49 @@ MyApp.controller("LogInController", function ($scope, StudentAPI_Token) {
 
 
 MyApp.controller("AddController", function ($scope, StudentAPI) {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            pos = position;
+            console.log(position)
+            
+
+
+            var codeLatLng = function (lat, lng) {
+                var geocoder;
+                geocoder = new google.maps.Geocoder();
+                var latlng = new google.maps.LatLng(lat, lng);
+                geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        console.log(results[0].formatted_address);
+                        $scope.S_Address = results[0].formatted_address;
+                        $scope.$apply();
+                    }
+
+                });
+            };
+
+            codeLatLng(position.coords.latitude, position.coords.longitude);
+
+
+
+
+        });
+
+
+    }
     $scope.addStudent = function () {
         var studentToAdd = {
-            'S_Name': $scope.S_Name
+            'S_Name': $scope.S_Name,
+            'S_PhoneNo': $scope.S_PhoneNo,
+            'S_Address': $scope.S_Address
+            
         };
         var onSuccess = function (response) {
             alert("Student Added");
             $scope.S_Name = undefined;
+            $scope.S_PhoneNo = undefined;
+            $scope.S_Address = undefined;
+
         };
 
         var onFail = function (reason) {
@@ -136,18 +172,24 @@ MyApp.controller("EditController", function ($scope, StudentAPI) {
         $scope.selectedItem = sItem.S_Id;
         $scope.isDeleteVisible = true;
         $scope.S_Name = sItem.S_Name;
+        $scope.S_PhoneNo = sItem.S_PhoneNo;
+        $scope.S_Address = sItem.S_Address;
     };
 
     $scope.updateStudent = function () {
         var studentToUpdate = {
             'S_Id': $scope.selectedItem,
-            'S_Name': $scope.S_Name
+            'S_Name': $scope.S_Name,
+            'S_PhoneNo': $scope.S_PhoneNo,
+            'S_Address': $scope.S_Address
         };
 
         var onSuccessUpdate = function (response) {
             alert("Student Updated");
             $scope.selectedItem = "Select Student";
             $scope.S_Name = undefined;
+            $scope.S_PhoneNo = undefined;
+            $scope.S_Address = undefined;
             $scope.isDeleteVisible = false;
             getStudents().then(onSuccessGetStudents, onFailGetStudents);
         };
@@ -189,6 +231,8 @@ MyApp.controller("DeleteController", function ($scope, StudentAPI) {
         $scope.selectedItem = sItem.S_Id;
         $scope.isDeleteVisible = true;
         $scope.S_Name = sItem.S_Name;
+        $scope.S_PhoneNo = sItem.S_PhoneNo;
+        $scope.S_Address = sItem.S_Address;
     };
 
     $scope.deleteStudent = function () {
@@ -200,6 +244,8 @@ MyApp.controller("DeleteController", function ($scope, StudentAPI) {
             alert("Student Deleted");
             $scope.selectedItem = "Select Student";
             $scope.S_Name = undefined;
+            $scope.S_PhoneNo = undefined;
+            $scope.S_Address = undefined;
             $scope.isDeleteVisible = false;
             getStudents().then(onSuccessGetStudents, onFailGetStudents);
         };

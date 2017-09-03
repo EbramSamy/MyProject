@@ -16,5 +16,7 @@ namespace MyProject.DataAccess.Model
     {
         public int S_Id { get; set; }
         public string S_Name { get; set; }
+        public string S_Address { get; set; }
+        public string S_PhoneNo { get; set; }
     }
 }
