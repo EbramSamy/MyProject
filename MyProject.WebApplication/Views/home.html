@@ -2,7 +2,7 @@
 
     <h1 class="text-center text-danger">Students</h1>
     <hr />
-    <div class="row">
+    <div ng-show="isTableVisible" class="row">
         <div class="col-md-9 col-lg-offset-1">
             <input type="text" placeholder="Type To Filter Here" class="input-lg form-control" ng-model="searchFilter" />
             <br />
@@ -19,9 +19,11 @@
                     <td>{{student.S_Name }}</td>
                 </tr>
             </table>
-
-
         </div>
 
     </div>
+
+    <div ng-show="isLoaderVisible" class="loader center"></div>
+
 </div>
+

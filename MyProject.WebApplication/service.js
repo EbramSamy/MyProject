@@ -44,8 +44,8 @@ StudentService.factory('StudentAPI_Token', ['$http', '$q', 'TokeService', functi
     var StudentAPI_Token = {};
 
     TokeService.CurrentToken = null;
-    StudentAPI_Token.getToken = function () {
-        var obj = { 'username': 'admin', 'password': 'admin', 'grant_type': 'password' };
+    StudentAPI_Token.getToken = function (username,password) {
+        var obj = { 'username': username, 'password': password, 'grant_type': 'password' };
         Object.toparams = function ObjectsToParams(obj) {
             var p = [];
             for (var key in obj) {

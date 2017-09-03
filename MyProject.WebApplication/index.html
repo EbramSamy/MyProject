@@ -12,24 +12,52 @@
 
 
     <link href="Content/bootstrap.css" rel="stylesheet" />
-
+    <link href="Content/MyProjectStyle.css" rel="stylesheet" />
 </head>
 <body class="container">
-    <nav role="navigation" class="navbar navbar-inverse">
-        <ul class="nav navbar-nav">
-            <li class="active"> <a href="#!/GenerateToken"> GenerateToken </a></li>
-            <li > <a href="#!/Home"> Home </a></li>
-            <li> <a href="#!/Add"> Add </a></li>
-            <li> <a href="#!/Edit"> Edit </a></li>
-            <li> <a href="#!/Delete"> Delete </a></li>
-        </ul>
+    <div ng-controller="LogInController">
+        <div ng-show="isLogInVisible">
+            <h1 class="text-center text-danger">LogIn</h1>
+            <br />
+            <div class="row">
+                <div class="col-md-6 col-lg-offset-3">
+                    <form>
+                        <div class="form-group">
+                            <label for="nameInput">Username</label>
+                            <input id="nameInput" type="text" ng-model="username" class="form-control input-lg" placeholder="Username" />
+                        </div>
+                        <div class="form-group">
+                            <label for="passwordInput">Password</label>
+                            <input id="passwordInput" type="password" ng-model="password" class="form-control input-lg" placeholder="Password" />
+                        </div>
+                        <button ng-click="getToken()" class="btn btn-info form-control input-lg">Sign in</button>
+                    </form>
+                    <div>{{token}}</div>
+                </div>
 
-    </nav>
+            </div>
 
+            <div ng-show="isLoaderVisible" class="loader center"></div>
+        </div>
 
-    <div ng-view>
+        <div ng-show="isNavBarVisible">
+            <nav role="navigation" class="navbar navbar-inverse">
+                <ul class="nav navbar-nav">
+                    <li class="active"> <a href="#!/Home"> Home </a></li>
+                    <li> <a href="#!/Add"> Add </a></li>
+                    <li> <a href="#!/Edit"> Edit </a></li>
+                    <li> <a href="#!/Delete"> Delete </a></li>
+                </ul>
 
+            </nav>
+
+            <div ng-view>
+
+            </div>
+        </div>
     </div>
+
+
 
     <h3>MyDemo</h3>
 

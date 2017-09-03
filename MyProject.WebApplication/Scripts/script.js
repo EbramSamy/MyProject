@@ -52,16 +52,39 @@ MyApp.config(['$routeProvider', function ($routeProvider) {
         when('/Home', {
             templateUrl: 'Views/home.html',
             controller: 'HomeController'
-        }).
-        when('/GenerateToken', {
-            templateUrl: 'Views/generateToken.html',
-            controller: 'GenerateTokenController'
-        }).
-        otherwise({
-            redirectTo: '/GenerateToken'
         });
+    //.otherwise({
+    //    redirectTo: '/Home'
+    //});
 
 }]);
+
+
+MyApp.controller("LogInController", function ($scope, StudentAPI_Token) {
+    $scope.isNavBarVisible = false;
+    $scope.isLogInVisible = true;
+    $scope.isLoaderVisible = false;
+    $scope.getToken = function () {
+        $scope.isLoaderVisible = true;
+        var getToken = StudentAPI_Token.getToken;
+        var onSuccess = function (response) {
+
+            $scope.token = StudentAPI_Token.token;
+            $scope.isNavBarVisible = true;
+            $scope.isLogInVisible = false;
+            $scope.isLoaderVisible = false;
+        };
+
+        var onFail = function (reason) {
+            $scope.error = reason;
+        };
+
+        getToken($scope.username, $scope.password).then(onSuccess, onFail);
+    };
+
+
+});
+
 
 MyApp.controller("AddController", function ($scope, StudentAPI) {
     $scope.addStudent = function () {
@@ -194,24 +217,15 @@ MyApp.controller("DeleteController", function ($scope, StudentAPI) {
 });
 
 
-MyApp.controller("GenerateTokenController", function ($scope, StudentAPI_Token) {
-    var getToken = StudentAPI_Token.getToken;
-    var onSuccess = function (response) {
-        $scope.token = StudentAPI_Token.token;
-    };
-
-    var onFail = function (reason) {
-        $scope.error = reason;
-    };
-
-    getToken().then(onSuccess, onFail);
-    
-});
 
 MyApp.controller("HomeController", function ($scope, StudentAPI) {
-    
+    $scope.isTableVisible = false;
+    $scope.isLoaderVisible = true;
     var onSuccess = function (response) {
         $scope.students = response.data;
+        $scope.isLoaderVisible = false;
+        $scope.isTableVisible = true;
+
     };
 
     var onFail = function (reason) {
