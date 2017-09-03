@@ -6,18 +6,18 @@ StudentService.factory('StudentAPI', function ($http) {
     var StudentAPI = {};
     
     StudentAPI.getStudents = function (student) {
-        return $http.get(urlBase+"student");
+        return $http.get(urlBase+"students");
     };
 
 
     StudentAPI.addStudent = function (studentToAdd) {
-        return $http.post(urlBase + "student/", studentToAdd);
+        return $http.post(urlBase + "students/", studentToAdd);
     };
 
     StudentAPI.editStudent = function (studentToUpdate) {
         return $http({
             method: 'put',
-            url: urlBase + "student/" + studentToUpdate.S_Id,
+            url: urlBase + "students/" + studentToUpdate.S_Id,
             data: studentToUpdate
         });
     };
@@ -25,7 +25,7 @@ StudentService.factory('StudentAPI', function ($http) {
     StudentAPI.deleteStudent = function (studentToDelete) {
         return $http({
             method: 'delete',
-            url: urlBase + "student/" + studentToDelete.S_Id
+            url: urlBase + "students/" + studentToDelete.S_Id
         });
     };
 
